@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PermisoController extends Controller
+class WelcomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class PermisoController extends Controller
      */
     public function index()
     {
-        return view('permiso');
+        //
     }
 
     /**
@@ -23,8 +23,7 @@ class PermisoController extends Controller
      */
     public function create()
     {
-        // return 'Sistema para crear';
-        return view('permiso');
+        //
     }
 
     /**

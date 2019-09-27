@@ -13,4 +13,10 @@
 
 
 
-Route::get('permiso/{nombre}', 'PermisoController@index');
+
+Route::view('welcome', 'welcome');
+Route::view('adrian', 'adrian');
+Route::view('laravel', 'laravel');
+Route::get('/', 'InicioController@index');
+
+
