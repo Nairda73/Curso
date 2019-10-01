@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Admin\Menu;
+use App\Http\Request\ValidacionMenu;
 
-class PermisoController extends Controller
+class MenuController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +16,7 @@ class PermisoController extends Controller
      */
     public function index()
     {
-        return view('permiso');
+        //
     }
 
     /**
@@ -21,10 +24,9 @@ class PermisoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function crear()
     {
-        // return 'Sistema para crear';
-        return view('permiso');
+        return view('admin.menu.crear');
     }
 
     /**
@@ -33,9 +35,10 @@ class PermisoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function guardar(ValidacionMenu $request)
     {
-        //
+        Menu::create($request->all());
+        return redirect('admin/menu/crear')->with('mensaje', 'Menu creado con exito');
     }
 
     /**
@@ -44,7 +47,7 @@ class PermisoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function mostrar($id)
     {
         //
     }
@@ -55,7 +58,7 @@ class PermisoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editar($id)
     {
         //
     }
@@ -67,9 +70,9 @@ class PermisoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function actualizar(Request $request, $id)
     {
-        //
+        return redirect('admin/menu')->with('mensaje', 'Menu actualizado con exito');
     }
 
     /**
@@ -78,7 +81,7 @@ class PermisoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function eliminar($id)
     {
         //
     }
