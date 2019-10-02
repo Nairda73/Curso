@@ -32,8 +32,8 @@ var Curso = function(){
                 invalidHandler: function(event, validator) {
 
                 },
-                submit: function (form) {
-
+                submitHandler: function (form) {
+                    return true;
                 }
             });
         },
